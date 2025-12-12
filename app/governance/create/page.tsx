@@ -1,6 +1,9 @@
 import { CreateGovernanceAction } from '@/components/CreateGovernanceAction';
 import Link from 'next/link';
 
+// Force dynamic rendering to avoid WASM issues during build
+export const dynamic = 'force-dynamic';
+
 export default function CreateGovernanceActionPage() {
   return (
     <>
