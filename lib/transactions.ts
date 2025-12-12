@@ -309,15 +309,15 @@ export async function selectUtxoForMinting(
   }
 
   // Log all UTxOs for debugging
-  utxos.forEach((utxo, idx) => {
-    const lovelace = parseInt(utxo.output.amount.find((a) => a.unit === 'lovelace')?.quantity || '0');
-    const otherAssets = utxo.output.amount.filter((a) => a.unit !== 'lovelace');
+  utxos.forEach((utxo: any, idx: number) => {
+    const lovelace = parseInt(utxo.output.amount.find((a: any) => a.unit === 'lovelace')?.quantity || '0');
+    const otherAssets = utxo.output.amount.filter((a: any) => a.unit !== 'lovelace');
     console.log(`UTxO ${idx}: ${lovelace / 1_000_000} ADA, ${otherAssets.length} other assets`);
   });
 
   // Find all UTxOs with sufficient ADA
-  const suitableUtxos = utxos.filter((utxo) => {
-    const lovelace = parseInt(utxo.output.amount.find((a) => a.unit === 'lovelace')?.quantity || '0');
+  const suitableUtxos = utxos.filter((utxo: any) => {
+    const lovelace = parseInt(utxo.output.amount.find((a: any) => a.unit === 'lovelace')?.quantity || '0');
     return lovelace >= minLovelace;
   });
 
