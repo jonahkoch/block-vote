@@ -44,7 +44,7 @@ import { buildTokenMetadata } from './metadata';
  * @returns Transaction result
  */
 export async function buildCreatePactTx(
-  wallet: BrowserWallet,
+  wallet: any,
   params: CreatePactParams
 ): Promise<TxBuildResult> {
   try {
@@ -279,7 +279,7 @@ export async function addressesToCredentials(addresses: string[]): Promise<Crede
  * @param wallet - Connected Mesh wallet
  * @returns List of UTxOs
  */
-export async function getUserUtxos(wallet: BrowserWallet) {
+export async function getUserUtxos(wallet: any) {
   try {
     const utxos = await wallet.getUtxos();
     return utxos;
@@ -297,7 +297,7 @@ export async function getUserUtxos(wallet: BrowserWallet) {
  * @returns Selected UTxO reference
  */
 export async function selectUtxoForMinting(
-  wallet: BrowserWallet,
+  wallet: any,
   minLovelace: number = 2_000_000
 ) {
   const utxos = await getUserUtxos(wallet);

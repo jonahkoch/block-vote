@@ -64,7 +64,7 @@ function buildPactMetadata(
  * Select a UTxO to use for parameterizing the PACT minting policy
  * This ensures one-time minting
  */
-async function selectUtxoForPactMinting(wallet: BrowserWallet) {
+async function selectUtxoForPactMinting(wallet: any) {
   console.log('Selecting UTxO for PACT minting parameterization...');
 
   const utxos = await wallet.getUtxos();
@@ -111,7 +111,7 @@ async function selectUtxoForPactMinting(wallet: BrowserWallet) {
  * The 10 ADA cost is enforced by the frontend only.
  */
 export async function buildClaimPactTx(
-  wallet: BrowserWallet,
+  wallet: any,
   userAddress: string
 ) {
   console.log('🚀 Building CLAIM PACT transaction with Lucid Evolution...');
@@ -418,7 +418,7 @@ async function findPactMintingUtxoRef(policyId: string, assetUnit: string): Prom
  * @returns Transaction result with txHash
  */
 export async function buildBurnPactTx(
-  wallet: BrowserWallet,
+  wallet: any,
   userAddress: string
 ) {
   console.log('🔥 Building BURN PACT transaction with Lucid Evolution...');

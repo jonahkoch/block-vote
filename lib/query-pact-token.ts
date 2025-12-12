@@ -89,7 +89,7 @@ export async function hasPactToken(
  * Detects by token name (Blake2b hash of address)
  */
 export async function getPactTokenInfo(
-  wallet: BrowserWallet,
+  wallet: any,
   userAddress?: string
 ): Promise<PactTokenInfo | null> {
   try {
