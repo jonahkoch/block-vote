@@ -131,7 +131,7 @@ export async function buildCreatePactTx(
     // The minting policy is a Plutus script that needs to be provided
     const script = {
       code: mintingPolicy.compiledCode,
-      version: 'V3',
+      version: 'V3' as const,
     };
 
     console.log('Minting script hash:', mintingPolicy.hash);
