@@ -129,8 +129,8 @@ export async function getWalletBalance(wallet: any): Promise<number> {
     console.log('UTxOs received:', utxos.length);
 
     let totalLovelace = 0;
-    utxos.forEach(utxo => {
-      utxo.output.amount.forEach(asset => {
+    utxos.forEach((utxo: any) => {
+      utxo.output.amount.forEach((asset: any) => {
         if (asset.unit === 'lovelace') {
           totalLovelace += parseInt(asset.quantity);
         }
