@@ -264,7 +264,7 @@ export async function test4_MintCIP068Tokens(wallet: IWallet) {
 // Test 5: Mint + Minimal Metadata
 // ============================================================================
 
-export async function test5_MintWithMetadata(wallet: BrowserWallet) {
+export async function test5_MintWithMetadata(wallet: any) {
   console.log('\n=== TEST 5: Mint + Minimal Metadata ===');
 
   try {
