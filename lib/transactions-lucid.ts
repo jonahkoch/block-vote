@@ -349,7 +349,6 @@ export async function buildCreatePactTx_Lucid(
     return {
       success: true,
       txHash,
-      message: 'CREATE PACT transaction submitted successfully (Lucid Evolution)',
     };
   } catch (error) {
     console.error('\n❌ CREATE PACT transaction failed (Lucid Evolution)');
@@ -385,7 +384,6 @@ export async function buildCreatePactTx_Lucid(
     return {
       success: false,
       error: error instanceof Error ? error.message : String(error),
-      message: 'Failed to build CREATE PACT transaction',
     };
   }
 }
