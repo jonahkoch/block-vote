@@ -138,6 +138,11 @@ export function CastVote({
       return;
     }
 
+    if (!voteChoice) {
+      setError('Please select Yes or No before voting');
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setSuccess(null);
