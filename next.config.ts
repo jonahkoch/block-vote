@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
   turbopack: {},
   webpack: (config) => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
+
+    // Enable WebAssembly support for Cardano libraries
+    config.experiments = {
+      ...config.experiments,
+      asyncWebAssembly: true,
+    };
+
     return config;
   },
 };
