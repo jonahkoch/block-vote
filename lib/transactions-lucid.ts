@@ -263,7 +263,7 @@ export async function buildCreatePactTx_Lucid(
     tx.collectFrom([utxoToConsume]);
 
     console.log('Step 3: Minting reference token...');
-    tx.mintAssets({ [refAssetId]: 1n }, redeemer);
+    tx.mintAssets({ [refAssetId]: BigInt(1) }, redeemer);
 
     console.log('Step 4: Minting user tokens...');
     tx.mintAssets({ [userAssetId]: BigInt(params.qualifiedMembers.length) }, redeemer);
@@ -275,7 +275,7 @@ export async function buildCreatePactTx_Lucid(
     tx.pay.ToAddressWithData(
       metadataValidatorAddress,
       { kind: 'inline', value: governancePactDatum },
-      { lovelace: minAdaForScriptOutput, [refAssetId]: 1n }
+      { lovelace: minAdaForScriptOutput, [refAssetId]: BigInt(1) }
     );
 
     console.log('Step 7: Sending user tokens to distribution validator...');
@@ -656,7 +656,7 @@ export async function buildCastVoteTx(
       .pay.ToContract(
         votingValidatorAddress,
         { kind: "inline", value: datum },
-        { [userAssetId]: 1n }
+        { [userAssetId]: BigInt(1) }
       );
 
     console.log('✅ Transaction built');
