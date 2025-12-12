@@ -76,9 +76,9 @@ async function selectUtxoForPactMinting(wallet: any) {
   // Find a suitable UTxO with at least the claim cost + fees
   const minLovelace = PACT_CLAIM_COST + 5_000_000; // 10 ADA + 5 ADA for fees
 
-  const suitableUtxos = utxos.filter((utxo) => {
+  const suitableUtxos = utxos.filter((utxo: any) => {
     const lovelace = parseInt(
-      utxo.output.amount.find((a) => a.unit === 'lovelace')?.quantity || '0'
+      utxo.output.amount.find((a: any) => a.unit === 'lovelace')?.quantity || '0'
     );
     return lovelace >= minLovelace;
   });
