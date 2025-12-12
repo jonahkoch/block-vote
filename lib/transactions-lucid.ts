@@ -135,7 +135,7 @@ export async function buildCreatePactTx_Lucid(
       const testSimple = Data.to(new Constr(0, []));
       console.log('✅ Simple Constr works:', testSimple);
 
-      const testWithBigInt = Data.to(new Constr(0, [42n]));
+      const testWithBigInt = Data.to(new Constr(0, [BigInt(42)]));
       console.log('✅ Constr with BigInt works');
 
       const testWithHex = Data.to(new Constr(0, ["deadbeef"]));
@@ -243,7 +243,7 @@ export async function buildCreatePactTx_Lucid(
 
     // Calculate minimum ADA required for each output
     // Script outputs with datums typically need 2-3 ADA minimum
-    const minAdaForScriptOutput = 3_000_000n; // 3 ADA in lovelace
+    const minAdaForScriptOutput = BigInt(3_000_000); // 3 ADA in lovelace
 
     // Get the UTxO that will be consumed (required by the parameterized minting policy)
     const walletUtxos = await lucid.wallet().getUtxos();
@@ -475,11 +475,11 @@ export async function buildClaimTokenTx(
     const userAssetId = `${params.policyId}${params.userTokenName}`;
     const currentTokenCount = BigInt(distributionUtxo.assets[userAssetId] || 0);
 
-    if (currentTokenCount === 0n) {
+    if (currentTokenCount === BigInt(0)) {
       throw new Error('No tokens available in Distribution Validator');
     }
 
-    const remainingTokens = currentTokenCount - 1n;
+    const remainingTokens = currentTokenCount - BigInt(1);
     console.log(`\nCurrent tokens: ${currentTokenCount}`);
     console.log(`Tokens after claim: ${remainingTokens}`);
 
@@ -501,8 +501,8 @@ export async function buildClaimTokenTx(
     console.log('✅ Updated datum built');
 
     // 7. Calculate minimum ADA for outputs
-    const minAdaForScriptOutput = 3_000_000n; // 3 ADA minimum for script output
-    const minAdaForUserOutput = 2_000_000n; // 2 ADA minimum for user output
+    const minAdaForScriptOutput = BigInt(3_000_000); // 3 ADA minimum for script output
+    const minAdaForUserOutput = BigInt(2_000_000); // 2 ADA minimum for user output
 
     // 8. Build transaction
     console.log('\nStep 5: Building transaction...');
@@ -515,7 +515,7 @@ export async function buildClaimTokenTx(
       .attach.SpendingValidator(distributionValidator);
 
     // Output 1: Distribution Validator with (N-1) tokens (only if tokens remain)
-    if (remainingTokens > 0n) {
+    if (remainingTokens > BigInt(0)) {
       console.log('Step 6: Sending remaining tokens back to Distribution Validator...');
       tx.pay.ToAddressWithData(
         distributionValidatorAddress,
@@ -531,7 +531,7 @@ export async function buildClaimTokenTx(
     console.log('Step 7: Sending 1 token to user...');
     tx.pay.ToAddress(params.userAddress, {
       lovelace: minAdaForUserOutput,
-      [userAssetId]: 1n,
+      [userAssetId]: BigInt(1),
     });
 
     console.log('\nStep 8: Completing transaction...');
@@ -633,7 +633,7 @@ export async function buildCastVoteTx(
     console.log(`Found ${walletUtxos.length} UTxOs in wallet`);
 
     const tokenUtxo = walletUtxos.find(utxo => {
-      const hasToken = userAssetId in utxo.assets && utxo.assets[userAssetId] > 0n;
+      const hasToken = userAssetId in utxo.assets && utxo.assets[userAssetId] > BigInt(0);
       if (hasToken) {
         console.log('Found UTxO with voting token:', utxo.txHash);
       }
