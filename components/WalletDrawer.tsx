@@ -44,8 +44,8 @@ export function WalletDrawer() {
           console.log('UTxOs received:', utxos.length);
 
           // Calculate total balance from UTxOs
-          utxos.forEach(utxo => {
-            utxo.output.amount.forEach(asset => {
+          utxos.forEach((utxo: any) => {
+            utxo.output.amount.forEach((asset: any) => {
               if (asset.unit === 'lovelace') {
                 totalLovelace += parseInt(asset.quantity);
               } else {
