@@ -92,19 +92,6 @@ export function NavigationMenu() {
               </div>
 
               {/* Navigation Links */}
-              <div className="terminal-box-double mt-4">
-                <div className="terminal-header">┌─ NAVIGATE</div>
-                <div className="p-3 space-y-2">
-                  <a
-                    href="/diagnostics"
-                    className="block w-full px-4 py-3 border-2 border-blue-500 text-blue-500 font-mono font-bold rounded hover:bg-blue-500/20 transition-colors text-center"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    [ MESH SDK DIAGNOSTICS ]
-                  </a>
-                </div>
-              </div>
-
               {/* Info Box */}
               <div className="terminal-box-double mt-4">
                 <div className="terminal-header">┌─ INFO</div>
