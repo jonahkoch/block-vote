@@ -71,6 +71,11 @@ export function ClaimVotingToken({
       return;
     }
 
+    if (!walletAddress) {
+      setError('Could not retrieve wallet address');
+      return;
+    }
+
     if (!isAuthorized) {
       setError('You are not authorized to claim a voting token for this governance action');
       return;
