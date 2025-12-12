@@ -66,6 +66,10 @@ export function getValidatorAddress(lucid: LucidEvolution, scriptHash: string): 
   // Get network
   const network = lucid.config().network;
 
+  if (!network) {
+    throw new Error('Network not configured in Lucid instance');
+  }
+
   // Convert script hash to credential using Lucid's utility
   const credential = scriptHashToCredential(scriptHash);
 
