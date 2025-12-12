@@ -28,7 +28,7 @@ export function WalletConnect() {
     if (typeof window !== 'undefined' && window.cardano) {
       const detected: string[] = [];
       Object.keys(window.cardano).forEach((key) => {
-        if (key !== 'undefined' && window.cardano[key]?.enable) {
+        if (key !== 'undefined' && typeof window.cardano[key]?.enable === 'function') {
           detected.push(key);
         }
       });
