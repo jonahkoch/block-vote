@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  /* Default mode ONLY - transparent with blur */
+  .theme-default .terminal-box {
+    background: rgba(17, 24, 39, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 2px solid rgba(75, 85, 99, 0.5) !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem;
+  }
+
+  .theme-default .terminal-box-double {
+    background: rgba(17, 24, 39, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 2px solid rgba(75, 85, 99, 0.5) !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem;
+  }
+
+  .theme-default .terminal-header {
+    border-bottom: 2px solid rgba(75, 85, 99, 0.3) !important;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-weight: bold;
+  }
+
+  /* Default styles for both themes */
+  .status-ok::before {
+    content: '[✓] ';
+    color: #10b981;
+  }
+
+  .status-pending::before {
+    content: '[○] ';
+    color: #6b7280;
+  }
+
+  .status-error::before {
+    content: '[✗] ';
+    color: #ef4444;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

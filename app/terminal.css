@@ -1,0 +1,276 @@
+/* Terminal ASCII Aesthetic Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+.theme-terminal {
+  /* Terminal color scheme */
+  --terminal-bg: #000000;
+  --terminal-fg: #13CB8D;
+  --terminal-dim: #6FEEE1;
+  --terminal-highlight: #ffb000;
+  --terminal-border: #00ffb5;
+  --terminal-selection: #00ff0033;
+}
+
+/* Base terminal styling */
+.theme-terminal {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Reset all colored backgrounds */
+.theme-terminal * {
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+}
+
+/* Typography */
+.theme-terminal h1,
+.theme-terminal h2,
+.theme-terminal h3,
+.theme-terminal h4 {
+  color: var(--terminal-fg);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Links and interactive elements */
+.theme-terminal a,
+.theme-terminal button {
+  color: var(--terminal-fg);
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.theme-terminal a:hover,
+.theme-terminal button:hover {
+  color: var(--terminal-highlight);
+  text-decoration: underline;
+}
+
+/* ASCII Borders */
+.theme-terminal .terminal-box {
+  border: 1px solid var(--terminal-border);
+  padding: 1rem;
+  background: var(--terminal-bg);
+}
+
+.theme-terminal .terminal-box-double {
+  border: 2px solid var(--terminal-border);
+  padding: 1rem;
+  background: var(--terminal-bg);
+}
+
+/* Terminal list items */
+.theme-terminal .terminal-list-item {
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.theme-terminal .terminal-list-item::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--terminal-dim);
+}
+
+.theme-terminal .terminal-list-item:hover::before {
+  color: var(--terminal-highlight);
+}
+
+.theme-terminal .terminal-list-item:hover {
+  color: var(--terminal-highlight);
+}
+
+/* Terminal buttons (text-based) */
+.theme-terminal .terminal-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--terminal-border);
+  background: transparent;
+  color: var(--terminal-fg);
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-terminal .terminal-button:hover {
+  background: var(--terminal-selection);
+  color: var(--terminal-highlight);
+  border-color: var(--terminal-highlight);
+}
+
+.theme-terminal .terminal-button-active {
+  background: var(--terminal-selection);
+  border-color: var(--terminal-highlight);
+}
+
+/* Connected state */
+.theme-terminal .terminal-connected {
+  color: var(--terminal-highlight);
+}
+
+.theme-terminal .terminal-connected::before {
+  content: '[●] ';
+}
+
+/* Disconnected/inactive state */
+.theme-terminal .terminal-disconnected {
+  color: var(--terminal-dim);
+}
+
+/* Address display */
+.theme-terminal .terminal-address {
+  word-break: break-all;
+  font-size: 12px;
+  color: var(--terminal-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Containers - remove all rounded corners */
+.theme-terminal .rounded,
+.theme-terminal .rounded-lg,
+.theme-terminal .rounded-md {
+  border-radius: 0 !important;
+}
+
+/* Remove all gradient backgrounds */
+.theme-terminal .bg-gradient-to-r,
+.theme-terminal .bg-gradient-to-b {
+  background: var(--terminal-bg) !important;
+}
+
+/* Override Tailwind colors - except for progress bars */
+.theme-terminal .bg-blue-500:not([style*="width"]),
+.theme-terminal .bg-purple-500:not([style*="width"]),
+.theme-terminal .bg-green-500:not([style*="width"]),
+.theme-terminal .bg-red-500,
+.theme-terminal .bg-orange-500,
+.theme-terminal .bg-indigo-500,
+.theme-terminal .bg-pink-500,
+.theme-terminal .bg-teal-500,
+.theme-terminal .bg-white,
+.theme-terminal .bg-gray-50,
+.theme-terminal .bg-gray-900,
+.theme-terminal .dark\:bg-gray-900,
+.theme-terminal .dark\:bg-gray-800 {
+  background: transparent !important;
+}
+
+/* Progress bar backgrounds in Terminal Mode */
+.theme-terminal .bg-gray-800 {
+  background: #1f2937 !important;
+}
+
+/* Progress bar fills in Terminal Mode - keep their colors */
+.theme-terminal [style*="width"].bg-blue-500 {
+  background: #3b82f6 !important;
+}
+
+.theme-terminal [style*="width"].bg-green-500 {
+  background: #22c55e !important;
+}
+
+/* Text colors */
+.theme-terminal .text-gray-600,
+.theme-terminal .text-gray-700,
+.theme-terminal .dark\:text-gray-300,
+.theme-terminal .dark\:text-gray-400 {
+  color: var(--terminal-dim) !important;
+}
+
+/* ASCII art styles */
+.theme-terminal .ascii-art {
+  white-space: pre;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.2;
+  color: var(--terminal-fg);
+}
+
+/* Blinking cursor effect */
+.theme-terminal .cursor-blink::after {
+  content: '█';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Terminal header */
+.theme-terminal .terminal-header {
+  border-bottom: 1px solid var(--terminal-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Status indicators */
+.theme-terminal .status-ok::before {
+  content: '[✓] ';
+  color: var(--terminal-fg);
+}
+
+.theme-terminal .status-pending::before {
+  content: '[○] ';
+  color: var(--terminal-dim);
+}
+
+.theme-terminal .status-error::before {
+  content: '[✗] ';
+  color: var(--terminal-highlight);
+}
+
+/* Selection */
+.theme-terminal ::selection {
+  background: var(--terminal-selection);
+  color: var(--terminal-fg);
+}
+
+/* ============================================ */
+/* DEFAULT THEME - Transparent Glass Effect */
+/* ============================================ */
+
+.theme-default .terminal-box {
+  background: rgba(17, 24, 39, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 2px solid rgba(75, 85, 99, 0.5) !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem;
+}
+
+.theme-default .terminal-box-double {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 2px solid rgba(75, 85, 99, 0.9) !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem;
+}
+
+.theme-default .terminal-header {
+  border-bottom: 2px solid rgba(75, 85, 99, 0.3) !important;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Drawer backgrounds for Default Mode - transparent container */
+.theme-default .bg-white,
+.theme-default .bg-gray-50,
+.theme-default .bg-gray-900,
+.theme-default .dark\:bg-gray-900,
+.theme-default .dark\:bg-gray-800 {
+  background: transparent !important;
+}

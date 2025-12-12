@@ -1,0 +1,575 @@
+{
+  "preamble": {
+    "title": "joko/block-vote-contracts",
+    "description": "Aiken contracts for project 'joko/block-vote-contracts'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.19+e525483"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "distribution_validator.distribution_validator.spend",
+      "datum": {
+        "title": "datum_opt",
+        "schema": {
+          "$ref": "#/definitions/distribution_validator~1DistributionDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/distribution_validator~1DistributionRedeemer"
+        }
+      },
+      "compiledCode": "58b901010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cc01c0092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa0068acc004cdc3a400060146ea8006266e21200032330010013758601c60186ea8c038c030dd5001112cc0040062900044cdc02400466004004602000280722c804a2c80622c8048c02c004c02cc030004c020dd50014590060c01c004c00cdd5003c52689b2b200201",
+      "hash": "700d70a46d3177c3eb34455ce46cf5966189f9798f4673f58d310578"
+    },
+    {
+      "title": "distribution_validator.distribution_validator.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "58b901010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cc01c0092225980099b8748008c01cdd500144c8cc896600266e1d2000300a375400d15980098059baa0068acc004cdc3a400060146ea8006266e21200032330010013758601c60186ea8c038c030dd5001112cc0040062900044cdc02400466004004602000280722c804a2c80622c8048c02c004c02cc030004c020dd50014590060c01c004c00cdd5003c52689b2b200201",
+      "hash": "700d70a46d3177c3eb34455ce46cf5966189f9798f4673f58d310578"
+    },
+    {
+      "title": "metadata_validator.metadata_validator.spend",
+      "datum": {
+        "title": "datum_opt",
+        "schema": {
+          "$ref": "#/definitions/metadata_validator~1GovernancePactDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/metadata_validator~1MetadataRedeemer"
+        }
+      },
+      "compiledCode": "58b501010029800aba2aba1aab9faab9eaab9dab9a48888896600264646644b30013370e900118031baa00189919912cc004cdc3a400060126ea80162b3001300a375400b15980099b8748000c024dd5000c4cc89289bad300c300d300d300d300d300a3754601860146ea8004c030c034c034c034c034c034c034c034c028dd51806003c5900845900b45900818050009805180580098039baa0018b200a30070013007300800130070013003375400f149a26cac8009",
+      "hash": "9545d38360f4bb1366023c0f0149eb35c91b5eb716a04008927c907a"
+    },
+    {
+      "title": "metadata_validator.metadata_validator.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "58b501010029800aba2aba1aab9faab9eaab9dab9a48888896600264646644b30013370e900118031baa00189919912cc004cdc3a400060126ea80162b3001300a375400b15980099b8748000c024dd5000c4cc89289bad300c300d300d300d300d300a3754601860146ea8004c030c034c034c034c034c034c034c034c028dd51806003c5900845900b45900818050009805180580098039baa0018b200a30070013007300800130070013003375400f149a26cac8009",
+      "hash": "9545d38360f4bb1366023c0f0149eb35c91b5eb716a04008927c907a"
+    },
+    {
+      "title": "minting_policy.minting_policy.mint",
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/minting_policy~1MintRedeemer"
+        }
+      },
+      "parameters": [
+        {
+          "title": "utxo_ref",
+          "schema": {
+            "$ref": "#/definitions/cardano~1transaction~1OutputReference"
+          }
+        }
+      ],
+      "compiledCode": "590762010100229800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400130080024888966002600460106ea800e264646644b30013006300c3754011132323259800980a00144c8cc004004dd6180a00211192cc00400a2b3001300c301237540091323232323232323232323298009810800cdd71810805cdd718108054dd71810804cdd718108044dd69810803cdd698108034dd69810802cdd718108024dd71810801a4444444444b3001302c00b89980e981580609980e8050cc004c0a0dd5011cc0a0dd5010488c8c8cc004004010896600200300389919912cc004cdc8803801456600266e3c01c00a200300640b9133005005303400440b86eb8c0b4004dd598170009818000a05c14bd6f7b63048c0b0c0b4c0b4c0b4c0b4c0b4c0b4c0b4c0b40066e012002911919800800801912cc0040062980103d87a80008992cc004c010006266e9520003302f0014bd7044cc00c00cc0c400902b1817800a05a488888a60026eb0c0c401a6062606400d30323032005912cc0040062900044c010cc008008c0d00050312444530013758606a005330083756606a606c606c00404d375c600e60646ea800e600200291114c004cdc5244104000643b00000299b8a488104001bc2800000298008042444b3001598009819181c1baa3300c37586078020466ebcc0f4c0e8dd50008204528c528206e8992cc004c004c014032264b30013259800981a981d9baa001898199bad303f303c375400314a081d0cc0040200162b30013259800981a981d9baa001899b87375a607e60786ea8004012294103a1980080400244c9660026644b300130033300200200b8acc004cc00402c02226600201600f14a081e2294103c112cc0040062900044c048cc008008c10800503f111919800800801912cc0040062942264b30013372200800313371e008003133003003304500240fc6eb8c0fcc10c005041466002460806082003230403041304100191119199119801001000912cc00400600713233225980099b910070028acc004cdc78038014400600c821a26600a00a60920088218dd718210009bad30430013045001410c6602c0080062900048c100c104c104c104005222259800992cc004c0e8c100dd5000c4c96600266ebcc114c108dd5000982298231823182318231823182318231823182318211baa0138acc004c0e660026eacc018c108dd5000c0da01880222b300159800980398209baa30053042375400314a314a08202266ebcc00cc108dd5000a60103d87a80008a50410114a082022941040182218209baa0018b207e3301300e2303898009bab300530413754003035805a0068acc004c966002607460806ea8006264b30013375e608a60846ea8004c114c118c118c118c118c118c118c118c118c118c118c108dd5009c56600266e1e60026eacc018c108dd5000c0da016802002a2b300159800980398209baa30053042375400314a314a08202266ebcc00cc108dd5000a6103d87a80008a50410114a082022941040182218209baa0018b207e3301300e2300898009bab30053041375400303580520068992cc0056600260106e34dd7182218209baa0128acc004c020dc69bae30053041375402515980098041b8d375c600860826ea804a2b30013008375a600260826ea804a2b30013370e6eb4c110c114c114c114c114c114c114c104dd5009180a99b83375a600260826ea804920048acc004c020dd69822182298229822982298209baa012898041b8d375c602c60826ea804a294103f4528207e8a5040fd14a081fa294103f4528207e8acc004cdc39bad30013041375402401313371e6eb8c110c114c114c114c114c114c114c114c104dd500901ac528207e8a5040fc46088608a608a608a608a608a00314a081f2294103e2294103a1b8748012294103945282072223232330010010042259800800c00e2646644b30013372200e00515980099b8f007002899ba548000cc110dd4000a5eb8200c820226600a00a608c0088200dd7181f8009bad304000130420014100298103d87a80008a5040e06e2120008a5040dc11640a430210013020001301f001301e001301d001301c001301b001301a001301900130180013013375400916404513300930160021300130170024050600400516404460240026024002601a6ea80222c80588966002600c60186ea800a2646464b3001301400289980318098018992cc004c028006264b30013016001899192cc004c034006264b30013019001899805980c000804c59016180a1baa0028acc004c02c00626464653001375a6034003375a6034007375a60340049112cc004c07801201d16406c301a0013019001301437540051640488090c048dd5000980a800c5901318089baa0028acc004c0200062b3001301137540050058b20248b201e403c601e6ea80062c8088c048004c048004c034dd500145900b1bae300e300b375400a4464b30013006001899192cc004c04c00a0091640406eb8c044004c034dd5001c56600260080031323259800980980140122c8080dd7180880098069baa0038b2016402c60166ea8008dc3a400516401c300800130033754011149a26cac8009",
+      "hash": "b11bc31cad0afcac3bbf2531df43fd1276d147f12b301ac9d2256ede"
+    },
+    {
+      "title": "minting_policy.minting_policy.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "parameters": [
+        {
+          "title": "utxo_ref",
+          "schema": {
+            "$ref": "#/definitions/cardano~1transaction~1OutputReference"
+          }
+        }
+      ],
+      "compiledCode": "590762010100229800aba2aba1aba0aab9faab9eaab9dab9a488888896600264653001300800198041804800cdc3a400130080024888966002600460106ea800e264646644b30013006300c3754011132323259800980a00144c8cc004004dd6180a00211192cc00400a2b3001300c301237540091323232323232323232323298009810800cdd71810805cdd718108054dd71810804cdd718108044dd69810803cdd698108034dd69810802cdd718108024dd71810801a4444444444b3001302c00b89980e981580609980e8050cc004c0a0dd5011cc0a0dd5010488c8c8cc004004010896600200300389919912cc004cdc8803801456600266e3c01c00a200300640b9133005005303400440b86eb8c0b4004dd598170009818000a05c14bd6f7b63048c0b0c0b4c0b4c0b4c0b4c0b4c0b4c0b4c0b40066e012002911919800800801912cc0040062980103d87a80008992cc004c010006266e9520003302f0014bd7044cc00c00cc0c400902b1817800a05a488888a60026eb0c0c401a6062606400d30323032005912cc0040062900044c010cc008008c0d00050312444530013758606a005330083756606a606c606c00404d375c600e60646ea800e600200291114c004cdc5244104000643b00000299b8a488104001bc2800000298008042444b3001598009819181c1baa3300c37586078020466ebcc0f4c0e8dd50008204528c528206e8992cc004c004c014032264b30013259800981a981d9baa001898199bad303f303c375400314a081d0cc0040200162b30013259800981a981d9baa001899b87375a607e60786ea8004012294103a1980080400244c9660026644b300130033300200200b8acc004cc00402c02226600201600f14a081e2294103c112cc0040062900044c048cc008008c10800503f111919800800801912cc0040062942264b30013372200800313371e008003133003003304500240fc6eb8c0fcc10c005041466002460806082003230403041304100191119199119801001000912cc00400600713233225980099b910070028acc004cdc78038014400600c821a26600a00a60920088218dd718210009bad30430013045001410c6602c0080062900048c100c104c104c104005222259800992cc004c0e8c100dd5000c4c96600266ebcc114c108dd5000982298231823182318231823182318231823182318211baa0138acc004c0e660026eacc018c108dd5000c0da01880222b300159800980398209baa30053042375400314a314a08202266ebcc00cc108dd5000a60103d87a80008a50410114a082022941040182218209baa0018b207e3301300e2303898009bab300530413754003035805a0068acc004c966002607460806ea8006264b30013375e608a60846ea8004c114c118c118c118c118c118c118c118c118c118c118c108dd5009c56600266e1e60026eacc018c108dd5000c0da016802002a2b300159800980398209baa30053042375400314a314a08202266ebcc00cc108dd5000a6103d87a80008a50410114a082022941040182218209baa0018b207e3301300e2300898009bab30053041375400303580520068992cc0056600260106e34dd7182218209baa0128acc004c020dc69bae30053041375402515980098041b8d375c600860826ea804a2b30013008375a600260826ea804a2b30013370e6eb4c110c114c114c114c114c114c114c104dd5009180a99b83375a600260826ea804920048acc004c020dd69822182298229822982298209baa012898041b8d375c602c60826ea804a294103f4528207e8a5040fd14a081fa294103f4528207e8acc004cdc39bad30013041375402401313371e6eb8c110c114c114c114c114c114c114c114c104dd500901ac528207e8a5040fc46088608a608a608a608a608a00314a081f2294103e2294103a1b8748012294103945282072223232330010010042259800800c00e2646644b30013372200e00515980099b8f007002899ba548000cc110dd4000a5eb8200c820226600a00a608c0088200dd7181f8009bad304000130420014100298103d87a80008a5040e06e2120008a5040dc11640a430210013020001301f001301e001301d001301c001301b001301a001301900130180013013375400916404513300930160021300130170024050600400516404460240026024002601a6ea80222c80588966002600c60186ea800a2646464b3001301400289980318098018992cc004c028006264b30013016001899192cc004c034006264b30013019001899805980c000804c59016180a1baa0028acc004c02c00626464653001375a6034003375a6034007375a60340049112cc004c07801201d16406c301a0013019001301437540051640488090c048dd5000980a800c5901318089baa0028acc004c0200062b3001301137540050058b20248b201e403c601e6ea80062c8088c048004c048004c034dd500145900b1bae300e300b375400a4464b30013006001899192cc004c04c00a0091640406eb8c044004c034dd5001c56600260080031323259800980980140122c8080dd7180880098069baa0038b2016402c60166ea8008dc3a400516401c300800130033754011149a26cac8009",
+      "hash": "b11bc31cad0afcac3bbf2531df43fd1276d147f12b301ac9d2256ede"
+    },
+    {
+      "title": "voting_validator.voting_validator.mint",
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/voting_validator~1VotingRedeemer"
+        }
+      },
+      "parameters": [
+        {
+          "title": "policy_id",
+          "schema": {
+            "$ref": "#/definitions/cardano~1assets~1PolicyId"
+          }
+        }
+      ],
+      "compiledCode": "58cb010100229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e26644b30013004300b375400d132598009808000c4c8c966002600e00315980098079baa002802459010456600266e1d20020018acc004c03cdd500140122c80822c806900d18069baa001300f0018b201c300c375400d1640286eb8c030c028dd50018acc004c008c024dd5180618051baa0048a518a514021164020300800130043754011149a26cac8011",
+      "hash": "5390222f9581a382e3d4111eed5cf0c4284b09f8875c409b5a655a0a"
+    },
+    {
+      "title": "voting_validator.voting_validator.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "parameters": [
+        {
+          "title": "policy_id",
+          "schema": {
+            "$ref": "#/definitions/cardano~1assets~1PolicyId"
+          }
+        }
+      ],
+      "compiledCode": "58cb010100229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e26644b30013004300b375400d132598009808000c4c8c966002600e00315980098079baa002802459010456600266e1d20020018acc004c03cdd500140122c80822c806900d18069baa001300f0018b201c300c375400d1640286eb8c030c028dd50018acc004c008c024dd5180618051baa0048a518a514021164020300800130043754011149a26cac8011",
+      "hash": "5390222f9581a382e3d4111eed5cf0c4284b09f8875c409b5a655a0a"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "title": "ByteArray",
+      "dataType": "bytes"
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "List$cardano/address/Credential": {
+      "dataType": "list",
+      "items": {
+        "$ref": "#/definitions/cardano~1address~1Credential"
+      }
+    },
+    "Option$cardano/address/StakeCredential": {
+      "title": "Option",
+      "anyOf": [
+        {
+          "title": "Some",
+          "description": "An optional value.",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/cardano~1address~1StakeCredential"
+            }
+          ]
+        },
+        {
+          "title": "None",
+          "description": "Nothing.",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "aiken/crypto/ScriptHash": {
+      "title": "ScriptHash",
+      "dataType": "bytes"
+    },
+    "aiken/crypto/VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "cardano/address/Address": {
+      "title": "Address",
+      "description": "A Cardano `Address` typically holding one or two credential references.\n\n Note that legacy bootstrap addresses (a.k.a. 'Byron addresses') are\n completely excluded from Plutus contexts. Thus, from an on-chain\n perspective only exists addresses of type 00, 01, ..., 07 as detailed\n in [CIP-0019 :: Shelley Addresses](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0019/#shelley-addresses).",
+      "anyOf": [
+        {
+          "title": "Address",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "payment_credential",
+              "$ref": "#/definitions/cardano~1address~1PaymentCredential"
+            },
+            {
+              "title": "stake_credential",
+              "$ref": "#/definitions/Option$cardano~1address~1StakeCredential"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/Credential": {
+      "title": "Credential",
+      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+      "anyOf": [
+        {
+          "title": "VerificationKey",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        },
+        {
+          "title": "Script",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1ScriptHash"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/PaymentCredential": {
+      "title": "PaymentCredential",
+      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+      "anyOf": [
+        {
+          "title": "VerificationKey",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        },
+        {
+          "title": "Script",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1crypto~1ScriptHash"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/address/StakeCredential": {
+      "title": "StakeCredential",
+      "description": "Represent a type of object that can be represented either inline (by hash)\n or via a reference (i.e. a pointer to an on-chain location).\n\n This is mainly use for capturing pointers to a stake credential\n registration certificate in the case of so-called pointer addresses.",
+      "anyOf": [
+        {
+          "title": "Inline",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/cardano~1address~1Credential"
+            }
+          ]
+        },
+        {
+          "title": "Pointer",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "slot_number",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "transaction_index",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "certificate_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "cardano/assets/AssetName": {
+      "title": "AssetName",
+      "dataType": "bytes"
+    },
+    "cardano/assets/PolicyId": {
+      "title": "PolicyId",
+      "dataType": "bytes"
+    },
+    "cardano/transaction/OutputReference": {
+      "title": "OutputReference",
+      "description": "An `OutputReference` is a unique reference to an output on-chain. The `output_index`\n corresponds to the position in the output list of the transaction (identified by its id)\n that produced that output",
+      "anyOf": [
+        {
+          "title": "OutputReference",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "transaction_id",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "output_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution_validator/DistributionDatum": {
+      "title": "DistributionDatum",
+      "description": "Datum for distribution validator",
+      "anyOf": [
+        {
+          "title": "DistributionDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "qualified_members",
+              "description": "List of qualified member credentials",
+              "$ref": "#/definitions/List$cardano~1address~1Credential"
+            },
+            {
+              "title": "policy_id",
+              "description": "Policy ID of the tokens",
+              "$ref": "#/definitions/cardano~1assets~1PolicyId"
+            },
+            {
+              "title": "user_token_name",
+              "description": "User token asset name",
+              "$ref": "#/definitions/cardano~1assets~1AssetName"
+            },
+            {
+              "title": "total_tokens",
+              "description": "Total number of tokens",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution_validator/DistributionRedeemer": {
+      "title": "DistributionRedeemer",
+      "description": "Redeemer for claiming tokens",
+      "anyOf": [
+        {
+          "title": "ClaimToken",
+          "description": "Member claims their token",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "metadata_validator/GovernancePactDatum": {
+      "title": "GovernancePactDatum",
+      "description": "Datum stored with the reference token\n Contains all governance pact metadata",
+      "anyOf": [
+        {
+          "title": "GovernancePactDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "title",
+              "description": "Title of the governance pact",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "description",
+              "description": "Description/abstract from Cardano governance action",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "cardano_action_id",
+              "description": "Cardano governance action ID (txHash#index)",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "cardano_action_type",
+              "description": "Cardano governance action type (InfoAction, TreasuryWithdrawals, etc)",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "voting_deadline",
+              "description": "POSIX timestamp when blockVote voting ends (3 epochs before Cardano expiry)",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "total_members",
+              "description": "Total number of qualified members",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "required_votes",
+              "description": "Required votes for binding result (simple majority: total_members/2 + 1)",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "policy_id",
+              "description": "Policy ID of the minting policy (for identifying tokens)",
+              "$ref": "#/definitions/cardano~1assets~1PolicyId"
+            },
+            {
+              "title": "asset_name",
+              "description": "Asset name (without label prefix) - shared by ref and user tokens",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "metadata_validator",
+              "description": "Address of this metadata validator (for validation)",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            },
+            {
+              "title": "distribution_validator",
+              "description": "Address of the distribution validator (where user tokens go)",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            }
+          ]
+        }
+      ]
+    },
+    "metadata_validator/MetadataRedeemer": {
+      "title": "MetadataRedeemer",
+      "description": "Redeemer for spending the reference token",
+      "anyOf": [
+        {
+          "title": "UnlockAfterVoting",
+          "description": "Unlock reference token after voting period ends\n Used for cleanup or burning tokens",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "minting_policy/GovernancePactDatum": {
+      "title": "GovernancePactDatum",
+      "description": "Datum stored at metadata validator with reference token\n Contains all governance pact metadata",
+      "anyOf": [
+        {
+          "title": "GovernancePactDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "title",
+              "description": "Title of the governance pact",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "description",
+              "description": "Description/abstract from Cardano governance action",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "cardano_action_id",
+              "description": "Cardano governance action ID (txHash#index)",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "cardano_action_type",
+              "description": "Cardano governance action type (InfoAction, TreasuryWithdrawals, etc)",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "voting_deadline",
+              "description": "POSIX timestamp when blockVote voting ends (3 epochs before Cardano expiry)",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "total_members",
+              "description": "Total number of qualified members",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "required_votes",
+              "description": "Required votes for binding result (simple majority: total_members/2 + 1)",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "policy_id",
+              "description": "Policy ID of this minting policy (for identifying tokens)",
+              "$ref": "#/definitions/cardano~1assets~1PolicyId"
+            },
+            {
+              "title": "asset_name",
+              "description": "Asset name (without label prefix) - shared by ref and user tokens",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "metadata_validator",
+              "description": "Address of the metadata validator (where reference token is locked)",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            },
+            {
+              "title": "distribution_validator",
+              "description": "Address of the distribution validator (where user tokens go)",
+              "$ref": "#/definitions/cardano~1address~1Address"
+            }
+          ]
+        }
+      ]
+    },
+    "minting_policy/MintRedeemer": {
+      "title": "MintRedeemer",
+      "description": "Redeemer for minting action",
+      "anyOf": [
+        {
+          "title": "CreatePact",
+          "description": "Create a new governance pact",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "qualified_members",
+              "description": "List of qualified member credentials",
+              "$ref": "#/definitions/List$cardano~1address~1Credential"
+            },
+            {
+              "title": "pact_datum",
+              "description": "Governance pact metadata",
+              "$ref": "#/definitions/minting_policy~1GovernancePactDatum"
+            }
+          ]
+        }
+      ]
+    },
+    "voting_validator/VoteChoice": {
+      "title": "VoteChoice",
+      "description": "Vote choice",
+      "anyOf": [
+        {
+          "title": "Yes",
+          "description": "Vote in favor",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "No",
+          "description": "Vote against",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "voting_validator/VotingRedeemer": {
+      "title": "VotingRedeemer",
+      "description": "Redeemer for burning a token (casting a vote)",
+      "anyOf": [
+        {
+          "title": "CastVote",
+          "description": "Cast a vote by burning the token",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "vote",
+              "$ref": "#/definitions/voting_validator~1VoteChoice"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
