@@ -69,8 +69,8 @@ export async function hasPactToken(
     const utxos = await wallet.getUtxos();
 
     // Check if any asset has the matching token name
-    const hasPact = utxos.some(utxo =>
-      utxo.output.amount.some(asset => {
+    const hasPact = utxos.some((utxo: any) =>
+      utxo.output.amount.some((asset: any) => {
         // Extract token name from unit (last 64 chars for hex token name)
         const assetUnit = asset.unit;
         if (assetUnit === 'lovelace') return false;
@@ -114,8 +114,8 @@ export async function getPactTokenInfo(
     const expectedTokenName = generatePactTokenName(userAddress);
     const utxos = await wallet.getUtxos();
 
-    for (const utxo of utxos) {
-      for (const asset of utxo.output.amount) {
+    for (const utxo of utxos as any[]) {
+      for (const asset of utxo.output.amount as any[]) {
         if (asset.unit === 'lovelace') continue;
 
         // Extract policy ID and token name
