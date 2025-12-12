@@ -57,6 +57,11 @@ export async function hasPactToken(
       userAddress = await wallet.getChangeAddress();
     }
 
+    if (!userAddress) {
+      console.error('Could not retrieve user address');
+      return false;
+    }
+
     // Generate expected token name
     const expectedTokenName = generatePactTokenName(userAddress);
     console.log('Expected PACT token name:', expectedTokenName);
@@ -98,6 +103,11 @@ export async function getPactTokenInfo(
     // Get user address if not provided
     if (!userAddress) {
       userAddress = await wallet.getChangeAddress();
+    }
+
+    if (!userAddress) {
+      console.error('Could not retrieve user address');
+      return null;
     }
 
     // Generate expected token name
