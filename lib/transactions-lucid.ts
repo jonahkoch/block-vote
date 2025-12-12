@@ -490,12 +490,12 @@ export async function buildClaimTokenTx(
     // The datum from the blockchain is already in Plutus Data format (Constr),
     // so we can use it directly without re-serialization
     const updatedDatumData = new Constr(0, [
-      params.distributionDatum.qualifiedMembers,  // Keep as-is (already Plutus Data)
-      params.distributionDatum.policyId,
-      params.distributionDatum.userTokenName,
+      params.distributionDatum.qualifiedMembers as any,  // Keep as-is (already Plutus Data)
+      params.distributionDatum.policyId as any,
+      params.distributionDatum.userTokenName as any,
       BigInt(remainingTokens),  // Update the token count
     ]);
-    const updatedDatum = Data.to(updatedDatumData);
+    const updatedDatum = Data.to(updatedDatumData as any);
     console.log('✅ Updated datum built');
 
     // 7. Calculate minimum ADA for outputs
