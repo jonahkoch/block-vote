@@ -46,7 +46,7 @@ function generatePactTokenName(userAddress: string): string {
  * So we detect by asset name (Blake2b-256 hash of user address)
  */
 export async function hasPactToken(
-  wallet: BrowserWallet,
+  wallet: any,
   userAddress?: string
 ): Promise<boolean> {
   try {

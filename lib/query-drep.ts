@@ -45,7 +45,7 @@ export interface PactEligibility {
 /**
  * Get stake address from connected wallet
  */
-export async function getStakeAddress(wallet: BrowserWallet): Promise<string | null> {
+export async function getStakeAddress(wallet: any): Promise<string | null> {
   try {
     console.log('Getting stake address from wallet...');
     const rewardAddresses = await wallet.getRewardAddresses();
@@ -115,7 +115,7 @@ export async function getDRepAccountInfo(stakeAddress: string): Promise<DRepAcco
 /**
  * Get wallet balance in lovelace
  */
-export async function getWalletBalance(wallet: BrowserWallet): Promise<number> {
+export async function getWalletBalance(wallet: any): Promise<number> {
   try {
     console.log('Getting wallet balance...');
 
@@ -153,7 +153,7 @@ export async function getWalletBalance(wallet: BrowserWallet): Promise<number> {
  * 2. Delegation must be < 13M ADA
  * 3. Wallet balance must be >= 10 ADA
  */
-export async function checkPactEligibility(wallet: BrowserWallet): Promise<PactEligibility> {
+export async function checkPactEligibility(wallet: any): Promise<PactEligibility> {
   // Get stake address
   const stakeAddress = await getStakeAddress(wallet);
   if (!stakeAddress) {
