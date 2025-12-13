@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body>
+      <body className="md:px-0 lg:px-16 xl:px-32 2xl:px-48">
         <ThemeProvider>
           <CardanoProvider>
             <TransactionLibraryProvider>
