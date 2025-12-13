@@ -15,7 +15,7 @@ export default function Home() {
           </p>
 
           {/* Navigation Box */}
-          <div className="w-full max-w-2xl terminal-box-double p-8">
+          <div className="w-full terminal-box-double p-8" style={{ maxWidth: '540px' }}>
             <div className="terminal-header mb-6">┌─ NAVIGATE</div>
             <div className="flex flex-col gap-4">
               <Link
