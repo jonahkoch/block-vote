@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function GovernancePage() {
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center p-8 pt-24">
+      <div className="min-h-screen flex flex-col items-center justify-center p-8 pt-24 md:px-8 lg:px-24 xl:px-40 2xl:px-56">
         <main className="flex flex-col items-center gap-8 max-w-6xl w-full">
           {/* Header */}
           <div className="w-full text-center space-y-4">
