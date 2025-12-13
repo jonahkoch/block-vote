@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen flex flex-col items-center justify-center p-8 pt-24">
-        <main className="flex flex-col items-center gap-8 max-w-4xl w-full">
+        <main className="flex flex-col items-center gap-8 w-full" style={{ maxWidth: '720px' }}>
           <div className="ascii-art text-center">
 {`┌─────────────────────────┐
 │ V O T I N G  B L O C K  │
