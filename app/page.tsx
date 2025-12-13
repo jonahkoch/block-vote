@@ -63,21 +63,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="terminal-box w-full">
-            <div className="terminal-header">┌─ STATUS</div>
-            <ul className="space-y-1 p-4">
-              <li className="status-ok">Next.js + TypeScript + Tailwind CSS</li>
-              <li className="status-ok">Lucid Evolution for Cardano integration</li>
-              <li className="status-ok">Mesh SDK Wallet connection</li>
-              <li className="status-ok">Token gating</li>
-              <li className="status-ok">CIP-068 approach to fractionalization</li>
-              <li className="status-ok">On-chain voting</li>
-              <li className="status-pending">Aiken smart contract development</li>
-            </ul>
-            <div className="text-xs text-gray-500 font-mono p-4 border-t border-gray-700">
-              └─ PHASE 3: FRONTEND READY / CONTRACTS IN PROGRESS
-            </div>
-          </div>
         </main>
       </div>
     </>
