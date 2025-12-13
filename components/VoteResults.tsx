@@ -52,7 +52,7 @@ export function VoteResults({
       : 'text-yellow-500'
     : 'text-blue-500';
 
-  const explorerUrl = `https://preprod.cardanoscan.io/token/${refTokenUnit}`;
+  const explorerUrl = `https://preview.cexplorer.io/token/${refTokenUnit}`;
 
   return (
     <div className="terminal-box">
